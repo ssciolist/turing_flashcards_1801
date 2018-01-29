@@ -1,17 +1,16 @@
 #See Card.rb for details on Card class
 
 class Guess
-  def initialize(user_guess, card)
-    @user_guess = user_guess
-    @card = card
-  end
+    attr_reader :user_guess,
+                :a_card
 
-  def user_guess
-    @user_guess
+  def initialize(user_guess, a_card)
+    @a_card = a_card
+    @user_guess = user_guess
   end
 
   def card
-    @card.inspect
+    @a_card
   end
 
   def response
@@ -19,8 +18,15 @@ class Guess
   end
 
   def correct?
-    @user_guess == @card.answer
+    @user_guess == @a_card.answer
   end
 
+  def feedback
+    if @user_guess == @a_card.answer
+      "Correct!"
+    else
+      "Incorrect."
+    end
+  end
 
 end

@@ -1,17 +1,16 @@
 class Deck
-  attr_reader :cards
+  attr_reader :cards_in_deck
 
-  def initialize (*card)
-    #require 'pry';binding.pry
-    @cards = card
+  def initialize (card)
+    @cards_in_deck = card
   end
 
-  def cards
-      @cards
+  def cards_in_deck
+    @cards_in_deck
   end
 
   def count
-    @cards.length
+    @cards_in_deck.length
   end
 
 end

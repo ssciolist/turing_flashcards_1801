@@ -17,6 +17,6 @@ class CardTest < Minitest::Test
 
   def test_card_answer_exists
     card = Card.new("What is the capital of Alaska?", "Juneau")
-    assert_instance_of "Juneau", card.answer
+    assert_equal "Juneau", card.answer
   end
 end
